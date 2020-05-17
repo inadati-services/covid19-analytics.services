@@ -1,0 +1,44 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:postgres@localhost:5432/postgres?schema=public"
+}
+
+model users {
+  id            String   @default(cuid()) @id
+  prefecture_id String
+  email         String
+  password      String
+  created_at    String
+  updated_at    String
+}
+
+model prefectures {
+  id           String   @default(cuid()) @id
+  no           Int
+  is_published Boolean  @default(false)
+  region       String
+  name         String
+  created_at   String
+  updated_at   String
+}
+
+model quantities {
+  id            String   @default(cuid()) @id
+  prefecture_id String
+  date          String
+  positive      Int
+  discharge     Int
+  death         Int
+  sickbed_total Int
+  created_at    String
+  updated_at    String
+}
+
+model external_links {
+  id            String   @default(cuid()) @id
+  prefecture_id String
+  title         String
+  url           String
+  created_at    String
+  updated_at    String
+}

@@ -1,0 +1,89 @@
+type Query {
+    # 認証不要
+    getToken(email: String!, password: String!): Auth!
+    readPref(id: ID!): Prefecture!
+    readPrefs: [Prefecture!]!
+    # 要認証
+    readPrefAdmin: Prefecture!
+    readExternalLinksAdmin: [ExternalLink!]!
+    readUserEmail: User!
+}
+
+type Mutation {
+    # 要認証
+    registQuantity(
+        date_str: String!
+        positive: Int!
+        discharge: Int!
+        death: Int!
+        sickbed_total: Int!
+    ): Quantity!
+
+    updateQuantity(
+        id: ID!
+        date_str: String!
+        positive: Int!
+        discharge: Int!
+        death: Int!
+        sickbed_total: Int!
+    ): Quantity!
+
+    deleteQuantity(id: ID!): Quantity!
+
+    createExternalLink(title: String!, url: String!): ExternalLink!
+
+    updateExternalLink(id: ID!, title: String!, url: String!): ExternalLink!
+
+    deleteExternalLink(id: ID!): ExternalLink!
+
+    updatePrefPublished(is_published: Boolean!): Prefecture!
+}
+
+type Prefecture {
+    id: ID!
+    no: Int!
+    is_published: Boolean!
+    region: String!
+    name: String!
+    quantities: [Quantity!]!
+    external_links: [ExternalLink!]!
+    created_at: String
+    updated_at: String!
+}
+
+type Quantity {
+    id: ID!
+    prefecture_id: String!
+    date: String!
+    positive: Int!
+    discharge: Int!
+    death: Int!
+    sickbed_total: Int!
+    created_at: String
+    updated_at: String!
+}
+
+type ExternalLink {
+    id: ID!
+    prefecture_id: String!
+    title: String!
+    url: String!
+    created_at: String
+    updated_at: String!
+}
+
+# 認証関連
+type User {
+    id: ID!
+    prefecture_id: String!
+    email: String!
+    password: String!
+    created_at: String
+    updated_at: String!
+}
+
+type Auth {
+    id: ID!
+    token: String!
+}
+
