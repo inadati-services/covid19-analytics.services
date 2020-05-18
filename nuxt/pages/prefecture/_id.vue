@@ -110,7 +110,7 @@
                                 <p>
                                     上記、3指標は基準以上の場合は緑文字、基準未満の場合は赤文字で表示されます。
                                     <br />各基準は下記のとおりです。
-                                    <br />・終息傾向指標40以上
+                                    <br />・終息傾向指標30以上
                                     <br />・病床使用率25%以下
                                     <br />
                                     ・{{PATIENT_DEC_PERIOD}}日間連続の患者減少が「OK!」
@@ -197,7 +197,7 @@ export default {
     },
     computed: {
         endTrendIndexStyles() {
-            return this.endTrendIndex >= 40
+            return this.endTrendIndex >= 30
                 ? "green--text darken-4"
                 : "red--text accent-4";
         },
