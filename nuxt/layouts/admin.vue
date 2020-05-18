@@ -58,11 +58,6 @@ export default {
             drawer: false,
             drawerLinks: [
                 {
-                    link: `/`,
-                    linkIcon: "home",
-                    linkText: "トップページ"
-                },
-                {
                     link: `/admin/${params.id}`,
                     linkIcon: "create",
                     linkText: "データ入力"
@@ -71,6 +66,11 @@ export default {
                     link: `/admin/external-links/${params.id}`,
                     linkIcon: "fas fa-link",
                     linkText: "関連サイト登録"
+                },
+                {
+                    link: `/`,
+                    linkIcon: "home",
+                    linkText: "webサイトを表示"
                 }
             ],
             fixed: false,

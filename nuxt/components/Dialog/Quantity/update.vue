@@ -16,19 +16,21 @@
                             ></el-date-picker>
                         </el-form-item>
                         <el-form-item label="新規陽性者数">
-                            <el-input-number v-model="dialogData.positive" size="small" :min="0"></el-input-number>
+                            <el-input-number ref="input1" v-model="dialogData.positive" size="small" :min="0" @focus="$refs.input1.select()"></el-input-number>
                         </el-form-item>
                         <el-form-item label="新規退院者数">
-                            <el-input-number v-model="dialogData.discharge" size="small" :min="0"></el-input-number>
+                            <el-input-number ref="input2" v-model="dialogData.discharge" size="small" :min="0" @focus="$refs.input2.select()"></el-input-number>
                         </el-form-item>
                         <el-form-item label="新規死者数">
-                            <el-input-number v-model="dialogData.death" size="small" :min="0"></el-input-number>
+                            <el-input-number ref="input3" v-model="dialogData.death" size="small" :min="0" @focus="$refs.input3.select()"></el-input-number>
                         </el-form-item>
                         <el-form-item label="病床総数">
                             <el-input-number
+                                ref="input4"
                                 v-model="dialogData.sickbed_total"
                                 size="small"
                                 :min="0"
+                                @focus="$refs.input4.select()"
                             ></el-input-number>
                         </el-form-item>
                     </el-form>
