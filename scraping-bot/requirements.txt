@@ -1,0 +1,6 @@
+requests
+openpyxl
+beautifulsoup4
+psycopg2
+datetime
+python-dateutil

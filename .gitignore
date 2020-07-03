@@ -99,3 +99,5 @@ go.sum
 
 postgres
 cmd
+
+__pycache__
