@@ -1,62 +1,24 @@
-# gqlkit
+# 新型コロナ感染傾向分析アプリ
 
-## Getting started
-1. Install docker and docker-compose in your environment.  
-Also, prepare an environment for golang and node.js.
+## 目次
+### [1. プロジェクトの背景と目的]()
+- 背景
+- 目的
 
-2. Because we use prisma2 lift  
-Also install prisma2.
+### [2. アプリの概要]()
+- 基本機能
+- 採用技術概要
+- 構成図
 
-```
-npm i -g prisma2
-```
+### [3. フロントエンド]()
+- 採用技術
+- 管理画面とユーザー画面の関連、対比
+- 管理側の入力画面
+- 認証周りの工夫
 
-3. I have all the necessary tools  
-Let's git clone gqlkit.
+### [5. バックエンド]()
+- 採用技術
+- データ構造
 
-```
-git clone git@github.com:gqlkit-repos/gqlkit.git
-```
-
-4. Let's start the service with docker-compose.
-
-```
-cd gqlkit
-docker-compose up -d
-```
-
-5. Go to the "gqlkit-server/lift" directory and then  
-Migrate your DB model using prisma2.
-
-```
-cd gqlkit-server/lift
-prisma2 lift save
-prisma2 lift up
-```
-
-6. Prepare the necessary golang packages before starting gqlkit-server.  
-Since the package described in the Dockerfile will probably be needed later,  
-For now, let's put everything in.
-
-```
-go get -u github.com/hako/branca
-go get -u github.com/satori/go.uuid
-go get -u github.com/gorilla/websocket
-go get -u github.com/99designs/gqlgen/graphql/handler/extension
-go get -u github.com/99designs/gqlgen/graphql/handler/transport
-go get -u github.com/lib/pq
-go get -u github.com/jinzhu/gorm
-go get -u github.com/99designs/gqlgen/handler
-go get -u github.com/vektah/gqlparser
-go get -u github.com/go-chi/chi
-go get -u github.com/machinebox/graphql
-```
-
-7. Let's start gqlkit-server.
-
-```
-go run server.go
-```
-
-Congrats!  
-It's the beginning of a great graphql app development!
+### [6. その他、運用上追加した機能]()
+- スクレイピングによる新規発表情報の自動更新
