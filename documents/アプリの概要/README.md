@@ -22,11 +22,11 @@
 |サーバー種別|VPS|
 |OS|Ubuntu 16.04.6 LTS (Xenial Xerus)|
 
-### 採用技術概要
-**運用基盤**  
-- docker、docker-compose
-
-**コンテナ構成**
+### 運用基盤
+- docker
+- docker-compose
+ 
+### Dockerコンテナの構成
 |コンテナ名|コンテナの種別|使用言語、技術、フレームワーク等|
 |-|-|-|
 |https-portal|webサーバー
