@@ -36,3 +36,4 @@
 |nuxt|フロントエンド|Nuxt.js
 
 ### 構成図
+![構成図](../images/figure_6.png)
